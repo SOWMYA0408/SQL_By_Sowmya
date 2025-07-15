@@ -68,3 +68,35 @@ HAVING: Filters departments with more than 10 employees
 ORDER BY: Sorts result from highest to lowest count
 
 LIMIT: Shows only top 5 departments
+# 🛠️ Order of Writing SQL Commands (Syntax Order)
+
+When writing a SQL query, follow this sequence:
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition
+GROUP BY column
+HAVING condition
+ORDER BY column [ASC|DESC]
+LIMIT number;
+SELECT department, COUNT(*) AS total_employees
+FROM employees
+WHERE active = 1
+GROUP BY department
+HAVING COUNT(*) > 5
+ORDER BY total_employees DESC
+LIMIT 3;
+🧠 In the above query:
+
+First, SQL looks FROM employees
+
+Filters rows with WHERE active = 1
+
+Groups by department
+
+Filters groups with HAVING
+
+Then SELECTs and ORDERs
+
+Finally LIMITs the result
