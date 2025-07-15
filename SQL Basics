@@ -1,0 +1,41 @@
+# 📝 Order of Writing SQL Commands (Syntax Order)
+
+## 📖 Definition:
+The order of writing SQL commands refers to the **syntax structure** you follow when writing SQL queries. It tells SQL how to understand your request.
+
+Even if SQL **executes** commands in a different order internally, you must **write** them in the proper order to avoid errors.
+
+---
+
+## 🧱 Syntax Structure (Write in this order):
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition
+GROUP BY column
+HAVING condition
+ORDER BY column [ASC|DESC]
+LIMIT number;
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+WHERE status = 'Active'
+GROUP BY department
+HAVING COUNT(*) > 10
+ORDER BY employee_count DESC
+LIMIT 5;
+ In this example:
+
+SELECT: Chooses department & total employees
+
+FROM: The table used is employees
+
+WHERE: Filters only active employees
+
+GROUP BY: Groups data by department
+
+HAVING: Filters departments with more than 10 employees
+
+ORDER BY: Sorts result from highest to lowest count
+
+LIMIT: Shows only top 5 departments
